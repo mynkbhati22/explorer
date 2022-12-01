@@ -1,0 +1,13 @@
+.footer{
+    color: var(--white1);
+    background-color: var(--blue);
+    padding: 3rem 0rem;
+
+
+  }
+  .footer-text{
+    max-width:30rem
+  }
+  .polygon-heading{
+    font-size: 1.7rem;
+  }

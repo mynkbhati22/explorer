@@ -1,38 +1,92 @@
-.App {
-  text-align: center;
+:root{
+   --violet:#445164;
+   --blue:#333d4a;
+   --white:#e6e6e6;
+   --white1:#FFF;
+   --black:#000;
+   --purple:#8347e4;
+   --grey:#c8c8c9;
+   --skyblue:#017bfe;
+   --lightblue:#e5f2ff;
+   --lightgrey:#f5f6fa;
+   --darkgrey:#8d8d8d;
+   --white3:#fafafd;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+
+
+
+html{
+  font-size: 100%;
+}
+.container-explorer{
+  width: 80%;
+  display: block;
+  margin: 0 auto;
+}
+.section-margin{
+  /* margin: 3rem auto; */
+  /* padding: 2rem 0rem; */
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+
+/* /////////////media-query//////////////////////// */
+@media screen and (max-width:1600px) {
+.container-explorer{
+  width: 85%;
+  display: block;
+  margin: 0 auto;
+}
+
+}
+
+@media screen and (max-width:1200px) {
+  html{
+    font-size: 90%;
+  }
+  .container-explorer{
+    width: 85%;
+    display: block;
+    margin: 0 auto;
   }
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media screen and (max-width:1050px) {
+  html{
+    font-size: 85%;
   }
-  to {
-    transform: rotate(360deg);
+  .container-explorer{
+    width: 85%;
+    display: block;
+    margin: 0 auto;
+  }
+}
+@media screen and (max-width:900px) {
+  html{
+    font-size: 80%;
+  }
+  .container-explorer{
+    width: 90%;
+    display: block;
+    margin: 0 auto;
+  }
+}
+@media screen and (max-width:750px) {
+  html{
+    font-size: 75%;
+  }
+  .container-explorer{
+    width: 90%;
+    display: block;
+    margin: 0 auto;
+  }
+}
+@media screen and (max-width:600px) {
+  html{
+    font-size: 70%;
+  }
+  .container-explorer{
+    width: 95%;
+    display: block;
+    margin: 0 auto;
   }
 }

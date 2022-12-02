@@ -5,8 +5,10 @@ import Navbar from "./Navbar";
 import { Button } from "react-bootstrap";
 import Footer from "./Footer";
 import chart from "../Images/chart.png";
+import { Chart } from "react-google-charts";
 import axios from "axios";
 import moment from "moment";
+import AppWebsiteVisits from "./AppWebsiteVisits";
 
 const URL = "https://maalblockchainapi.in.ngrok.io";
 
@@ -35,8 +37,31 @@ function Home() {
           <Grid container>
             {/* ///////////////chart///////////////////////// */}
 
-            <Grid item lg={5} md={12} sm={12} xs={12}>
-              <img src={chart} alt="" className="chart-image" />
+            <Grid item lg={5} md={12} sm={12} xs={12} className="appex">
+              <AppWebsiteVisits
+                chartLabels={[
+                  "01/01/2003",
+                  "02/01/2003",
+                  "03/01/2003",
+                  "04/01/2003",
+                  "05/01/2003",
+                  "06/01/2003",
+                  "07/01/2003",
+                  "08/01/2003",
+                  "09/01/2003",
+                  "10/01/2003",
+                  "11/01/2003",
+                ]}
+                chartData={[
+                  {
+                    name: "Team C",
+                    type: "line",
+                    fill: "solid",
+                    data: [30, 25, 36, 30, 45, 35, 64, 52, 59, 36, 39],
+                  },
+                ]}
+              />
+              {/*  <img src={chart} alt="" className="chart-image" /> */}
               <div className="gas-tracker-box">
                 <div className="gas-tracker">
                   <span className="gas-tracker-text">

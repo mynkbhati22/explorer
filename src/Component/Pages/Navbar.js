@@ -66,7 +66,7 @@ function Navbar() {
               </>
             </li>
             <li>
-              <img src={polygonsvg} alt="" /> Polygon Edge Faucet{" "}
+              <img src={polygonsvg} alt="" /> MAAL Blockchain Faucet{" "}
             </li>
             <li>
               <span

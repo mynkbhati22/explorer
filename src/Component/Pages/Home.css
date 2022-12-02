@@ -149,7 +149,9 @@
   height: 15rem;
   overflow: hidden;
 }
-
+.appex{
+  padding: 2rem;
+}
 
 /* ///media query//// */
 

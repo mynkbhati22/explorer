@@ -178,6 +178,21 @@
 .apexcharts-text tspan {
   fill: white !important;
 }
+
+
+
+.animation-box {
+    -webkit-animation: fade-up-blocks-chain .3s cubic-bezier(.455,.03,.515,.955);
+    animation: fade-up-blocks-chain .3s cubic-bezier(.455,.03,.515,.955);
+    white-space: nowrap;
+    will-change: transform,opacity,width;
+}
+.animation-box{
+  transition: 3s ease;
+}
+
+
+
 /* ///media query//// */
 @media screen and (max-width:1400px) {
   .view-box-container{

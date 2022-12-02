@@ -188,10 +188,11 @@ function Home() {
                   </div>
                 </div>
                 <Grid container spacing={2} className="view-box-container">
+          
                   {blockcards && blockcards.length > 0 ? (
                     blockcards.map((res, index) => {
                       return (
-                        <Grid item lg={3} md={3} sm={12} xs={12} key={index}>
+                        <Grid item lg={3} md={3} sm={12} xs={12} className="animation-box" key={index}>
                           <div className="view-box">
                             {" "}
                             <div className="block-num">{res.blocknummber}</div>
@@ -215,6 +216,7 @@ function Home() {
                       <h5 className="nodata"> NO BLOCK TO SHOW</h5>
                     </div>
                   )}
+           
 
                   {/* <div>
                     <Slider {...settings}>

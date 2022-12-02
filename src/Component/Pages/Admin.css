@@ -1,3 +1,14 @@
 .admin-container{
     margin: 2rem 0rem;
 }
+label[data-shrink=false]+.MuiInputBase-formControl .css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input{
+    width: 100% !important;
+}
+#outlined-basic{
+    width: 100% !important;
+}
+.css-1u3bzj6-MuiFormControl-root-MuiTextField-root{
+    width: 100% !important;
+    display: block !important;
+    margin: 0 auto !important;
+}

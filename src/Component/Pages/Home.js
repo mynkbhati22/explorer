@@ -23,21 +23,22 @@ function Home() {
   // FOR CALLING API
 
   useEffect(() => {
-    try {
+    const blockcardinterval = setInterval(() => {
       axios.get(`${URL}/api/getblockcards`).then((res) => {
         setBlockcards(res.data);
         console.log("gettingblockcards", res.data);
       });
-    } catch (error) {
-      console.log(error);
-    }
+    }, 1000);
+    return () => {
+      clearInterval(blockcardinterval);
+    };
   }, []);
 
   // FOR INCREASING COUNTING
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setCounter((counter) => counter + 1);
+    const interval = setInterval((res) => {
+      setCounter((counter) => (blockcards ? 0 : counter + 1));
     }, 3200);
 
     return () => {
@@ -92,24 +93,32 @@ function Home() {
             <Grid item lg={5} md={12} sm={12} xs={12} className="appex">
               <AppWebsiteVisits
                 chartLabels={[
-                  "01/01/2003",
-                  "02/01/2003",
-                  "03/01/2003",
-                  "04/01/2003",
-                  "05/01/2003",
-                  "06/01/2003",
-                  "07/01/2003",
-                  "08/01/2003",
-                  "09/01/2003",
-                  "10/01/2003",
-                  "11/01/2003",
+                  "09/01/2021",
+                  "10/01/2021",
+                  "11/01/2021",
+                  "12/01/2021",
+                  "01/01/2022",
+                  "02/01/2022",
+                  "03/01/2022",
+                  "04/01/2022",
+                  "05/01/2022",
+                  "06/01/2022",
+                  "07/01/2022",
+                  "08/01/2022",
+                  "09/01/2022",
+                  "10/01/2022",
+                  "11/01/2022",
+                  "12/01/2022",
                 ]}
                 chartData={[
                   {
                     name: "Tx/day",
                     type: "line",
                     fill: "solid",
-                    data: [30, 25, 36, 30, 45, 35, 64, 52, 59, 36, 39],
+                    data: [
+                      11, 11.5, 11.7, 12.2, 11.9, 11.75, 11.73, 11.71, 11.74,
+                      11.73, 11.74, 11.74, 11.74, 11.74, 11.5, 11.74,
+                    ],
                   },
                 ]}
               />
@@ -123,7 +132,8 @@ function Home() {
                 </div>
                 <div className="daily-transaction">
                   <span className="gas-tracker-text">
-                    Daily Transactions <br />17
+                    Daily Transactions <br />
+                    17
                   </span>
                 </div>
               </div>
@@ -149,7 +159,7 @@ function Home() {
                   <Box className="average-time">
                     <div className="text-average">Total transaction</div>
 
-                    <div className="time-explorer">0</div>
+                    <div className="time-explorer">273</div>
                   </Box>
                 </Grid>
                 <Grid item lg={3} md={3} sm={12} xs={12}>
@@ -187,17 +197,24 @@ function Home() {
                   </div>
                 </div>
                 <Grid container spacing={2} className="view-box-container">
-          
                   {blockcards && blockcards.length > 0 ? (
                     blockcards.map((res, index) => {
                       return (
-                        <Grid item lg={3} md={3} sm={12} xs={12} className="animation-box" key={index}>
+                        <Grid
+                          item
+                          lg={3}
+                          md={3}
+                          sm={12}
+                          xs={12}
+                          className="animation-box"
+                          key={index}
+                        >
                           <div className="view-box">
                             {" "}
                             <div className="block-num">{res.blocknummber}</div>
                             <div className="hash-box-num">
                               {res.blocktranscations} Transactions &nbsp;{" "}
-                              {currentTime} seconds ago <br /> <br />
+                              {res.timeforseconds} seconds ago <br /> <br />
                               Miner{" "}
                               <span className="hash-num">
                                 {" "}
@@ -215,7 +232,6 @@ function Home() {
                       <h5 className="nodata"> NO BLOCK TO SHOW</h5>
                     </div>
                   )}
-           
 
                   {/* <div>
                     <Slider {...settings}>

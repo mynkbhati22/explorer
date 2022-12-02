@@ -85,7 +85,7 @@ function Admin() {
               />
             </Form.Group>
             <Form.Group className="mb-3" controlId="formBasicText">
-              <Form.Label>No. of Transaction Made</Form.Label>
+              <Form.Label>Time in seconds</Form.Label>
               <Form.Control
                 type="text"
                 required
@@ -115,7 +115,7 @@ function Admin() {
                 onChange={(e) => setReward(e.target.value)}
               />
             </Form.Group>
-    {/*         <Form.Group className="mb-3" controlId="formBasicText">
+            {/*         <Form.Group className="mb-3" controlId="formBasicText">
               <Form.Label>Transaction Success</Form.Label>
               <Form.Control
                 type="text"
@@ -125,7 +125,7 @@ function Admin() {
                 onChange={(e) => setTranscationsuccess(e.target.value)}
               />
             </Form.Group> */}
-            <Form.Group className="mb-3" controlId="formBasicText">
+            {/* <Form.Group className="mb-3" controlId="formBasicText">
               <Form.Label>Transfer Transaction</Form.Label>
               <Form.Control
                 type="text"
@@ -174,7 +174,7 @@ function Admin() {
                 value={time}
                 onChange={(e) => setTime(e.target.value)}
               />
-            </Form.Group>
+            </Form.Group> */}
             <Button variant="primary" type="submit">
               Create a Block
             </Button>

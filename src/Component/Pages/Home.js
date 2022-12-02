@@ -16,7 +16,10 @@ var currentTime = new Date().getTime() / 1000;
 // var formatted = moment(currentTime).format("hh:MM:ss");
 
 function Home() {
-  const [blockcards, setBlockcards] = useState([]);
+  const [blockcards, setBlockcards] = useState([]); //FOR GETTING API DATA
+  const [counter, setCounter] = useState(1014); //FOR INCREASING COUNTING
+
+  // FOR CALLING API
 
   useEffect(() => {
     try {
@@ -27,6 +30,18 @@ function Home() {
     } catch (error) {
       console.log(error);
     }
+  }, []);
+
+  // FOR INCREASING COUNTING
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCounter((counter) => counter + 1);
+    }, 1000);
+
+    return () => {
+      clearInterval(interval);
+    };
   }, []);
 
   return (
@@ -89,7 +104,7 @@ function Home() {
                   <Box className="average-time">
                     <div className="text-average">Average block time</div>
 
-                    <div className="time-explorer">2.0 seconds</div>
+                    <div className="time-explorer">0 seconds</div>
                   </Box>
                 </Grid>
                 <Grid item lg={3} md={3} sm={12} xs={12}>
@@ -97,7 +112,7 @@ function Home() {
                   <Box className="average-time">
                     <div className="text-average">Total transaction</div>
 
-                    <div className="time-explorer">2.0 seconds</div>
+                    <div className="time-explorer">0 seconds</div>
                   </Box>
                 </Grid>
                 <Grid item lg={3} md={3} sm={12} xs={12}>
@@ -105,7 +120,7 @@ function Home() {
                   <Box className="average-time">
                     <div className="text-average">Total blocks</div>
 
-                    <div className="time-explorer">2.0 seconds</div>
+                    <div className="time-explorer">{counter}</div>
                   </Box>
                 </Grid>
                 <Grid item lg={3} md={3} sm={12} xs={12}>
@@ -113,7 +128,7 @@ function Home() {
                   <Box className="average-time">
                     <div className="text-average">Wallet addresses</div>
 
-                    <div className="time-explorer">2.0 seconds</div>
+                    <div className="time-explorer">0 seconds</div>
                   </Box>
                 </Grid>
               </Grid>

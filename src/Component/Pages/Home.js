@@ -18,17 +18,17 @@ function Home() {
             <Grid item lg={5} md={12} sm={12} xs={12}>
               <img src={chart} alt="" className="chart-image" />
               <div className="gas-tracker-box">
-              <div className="gas-tracker">
-                <span className="gas-tracker-text">
-                  Gas tracker <br />
-                  0.4 Gwei
-                </span>
-              </div>
-              <div  className="daily-transaction">
-                <span  className="gas-tracker-text">
-                  Daily Transactions <br />0
-                </span>
-              </div>
+                <div className="gas-tracker">
+                  <span className="gas-tracker-text">
+                    Gas tracker <br />
+                    0.4 Gwei
+                  </span>
+                </div>
+                <div className="daily-transaction">
+                  <span className="gas-tracker-text">
+                    Daily Transactions <br />0
+                  </span>
+                </div>
               </div>
             </Grid>
             <Grid
@@ -90,6 +90,88 @@ function Home() {
                     <Button className="view-all-block">View All Blocks</Button>
                   </div>
                 </div>
+                <Grid container spacing={2} className="view-box-container">
+                <Grid item lg={3} md={3} sm={12} xs={12}>
+                <div className="view-box">
+                  {" "}
+                  <div className="block-num">16095052</div>
+                  <div className="hash-box-num">
+                    96 Transactions &nbsp; 28 minutes ago <br /> <br />
+                    Miner{" "}
+                    <span className="hash-num">
+                      {" "}
+                      0xF2f5C73fa04406b1995e397B55c24..
+                    </span>{" "}
+                    <br />
+                    Reward 0.024999608605706074 ETH
+                  </div>
+                </div>
+                </Grid>
+                <Grid item lg={3} md={3} sm={12} xs={12}>
+                <div className="view-box">
+                  {" "}
+                  <div className="block-num">16095052</div>
+                  <div className="hash-box-num">
+                    96 Transactions &nbsp; 28 minutes ago <br /> <br />
+                    Miner{" "}
+                    <span className="hash-num">
+                      {" "}
+                      0xF2f5C73fa04406b1995e397B55c24..
+                    </span>{" "}
+                    <br />
+                    Reward 0.024999608605706074 ETH
+                  </div>
+                </div>
+                </Grid>
+                <Grid item lg={3} md={3} sm={12} xs={12}>
+                <div className="view-box">
+                  {" "}
+                  <div className="block-num">16095052</div>
+                  <div className="hash-box-num">
+                    96 Transactions &nbsp; 28 minutes ago <br /> <br />
+                    Miner{" "}
+                    <span className="hash-num">
+                      {" "}
+                      0xF2f5C73fa04406b1995e397B55c24..
+                    </span>{" "}
+                    <br />
+                    Reward 0.024999608605706074 ETH
+                  </div>
+                </div>
+                </Grid>
+                <Grid item lg={3} md={3} sm={12} xs={12}>
+                <div className="view-box">
+                  {" "}
+                  <div className="block-num">16095052</div>
+                  <div className="hash-box-num">
+                    96 Transactions &nbsp; 28 minutes ago <br /> <br />
+                    Miner{" "}
+                    <span className="hash-num">
+                      {" "}
+                      0xF2f5C73fa04406b1995e397B55c24..
+                    </span>{" "}
+                    <br />
+                    Reward 0.024999608605706074 ETH
+                  </div>
+                </div>
+                </Grid>
+                <Grid item lg={3} md={3} sm={12} xs={12}>
+                <div className="view-box">
+                  {" "}
+                  <div className="block-num">16095052</div>
+                  <div className="hash-box-num">
+                    96 Transactions &nbsp; 28 minutes ago <br /> <br />
+                    Miner{" "}
+                    <span className="hash-num">
+                      {" "}
+                      0xF2f5C73fa04406b1995e397B55c24..
+                    </span>{" "}
+                    <br />
+                    Reward 0.024999608605706074 ETH
+                  </div>
+                </div>
+                </Grid>
+                </Grid>
                 {/*      <Grid container>
                   <Grid item xl={3} lg={3} md={4} sm={6} xs={12}></Grid>
                   <Grid item xl={3} lg={3} md={4} sm={6} xs={12}></Grid>

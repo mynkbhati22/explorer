@@ -110,9 +110,19 @@ function Navbar() {
                 )}
               </>
             </li>
-            <li>        <span className="search"> <FiSearch /> <input type="text" className="input-search" placeholder="Search by address, token symbol, name, transaction, or block number" /> </span></li>
+            <li>
+              {" "}
+              <span className="search">
+                {" "}
+                <FiSearch />{" "}
+                <input
+                  type="text"
+                  className="input-search"
+                  placeholder="Search by address, token symbol, name, transaction, or block number"
+                />{" "}
+              </span>
+            </li>
           </ul>
-  
         </Grid>
       </Grid>
     </>

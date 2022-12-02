@@ -46,6 +46,7 @@
 .transaction-hash {
   font-size: 0.8rem;
   color: var(--darkgrey);
+  overflow: hidden;
 }
 .transaction-box {
   margin: 1rem 0rem;
@@ -57,8 +58,8 @@
   border: 1px solid var(--skyblue);
 }
 .transaction-hash-box {
-  padding: 1.5rem 0rem;
-  padding-left: 1rem;
+  padding: 1.5rem 1rem;
+
 }
 .transaction-hash-time {
 
@@ -125,25 +126,63 @@
     margin-left: 1rem;
     display: inline-block;
 }
-/* //////////////////////////////////media query/////////////////////////////// */
+.hash-box-num{
+  font-size: 0.8rem;
+  color: var(--darkgrey);
+  background-color: var(--lightgrey) ;
+}
+.view-box{
+  border: 1px solid var(--darkgrey);
+  border-left: 5px solid var(--skyblue);
+  border-radius: 5px;
+  overflow: hidden;
+}
+.block-num,.hash-box-num{
+  padding:1rem;
+}
+.hash-num, .block-num{
+  color: var(--skyblue);
+}
+.view-box-container{
+  padding-top: 2rem;
+  width: 100%;
+  height: 15rem;
+  overflow: hidden;
+}
+
+
+/* ///media query//// */
+
+@media screen and (max-width:450px) {
+  .transfer-text{
+    display: inline-block;
+    margin: 1rem;
+  }
+}
+
+
 
 @media screen and (min-width: 900px) {
  .transaction-hash-time{
     text-align: right;
     padding-left: 1rem;
  }
+
   }
 @media screen and (max-width: 900px) {
   .transaction-success-border {
     height: 5rem;
     background-color: var(--white1);
   }
+  .average-time{
+    margin: 1rem  !important;
+   }
 }
 @media screen and (min-width:1200px) {
     .average-text-section{
         position: absolute;
         bottom: 0;
         border: 10px 10px 0px 0px;
-        padding:4rem 0rem
+        padding:4rem 1rem
     }
 }

@@ -18,3 +18,10 @@ button#toggle-Button {
   margin-top: 1rem;
   font-weight: 600;
 }
+.nav-list-offcanvas{
+  list-style-type: none !important;
+  font-size: 1.5rem;
+}
+.nav-list-offcanvas li{
+  margin: 1rem 0rem;
+}

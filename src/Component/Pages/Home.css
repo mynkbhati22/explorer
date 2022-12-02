@@ -1,3 +1,6 @@
+@import "~slick-carousel/slick/slick.css";
+@import "~slick-carousel/slick/slick-theme.css";
+
 .chart-section {
   background-color: var(--blue);
   color: var(--white);
@@ -5,8 +8,7 @@
 .average-text-section {
   background-color: var(--violet);
   padding: 2rem 1rem;
-  border-radius: 10px;
-
+  border-radius: 10px 10px 0px 0px;
 }
 .average-time {
   padding-left: 1rem;
@@ -42,6 +44,7 @@
 }
 .block-text {
   font-size: 1.2rem;
+  margin-bottom: 1rem;
 }
 .transaction-hash {
   font-size: 0.8rem;
@@ -59,10 +62,8 @@
 }
 .transaction-hash-box {
   padding: 1.5rem 1rem;
-
 }
 .transaction-hash-time {
-
   padding: 1.5rem 0rem;
   padding-right: 1rem;
   padding-left: 1rem;
@@ -91,103 +92,117 @@
   margin: 0.5rem;
   border-radius: 10px;
 }
-.transaction-hash-time{
-    color: var(--darkgrey);
-    font-size: 0.8rem;
+.transaction-hash-time {
+  color: var(--darkgrey);
+  font-size: 0.8rem;
 }
-.Block-section{
-    background-color: var(--white3);
+.Block-section {
+  background-color: var(--white3);
 }
-.Block-section-margin{
-    background-color: var(--white1);
+.Block-section-margin {
+  background-color: var(--white1);
 }
-.hash-value{
-    min-width: 30rem;
-    overflow: hidden;
+.hash-value {
+  min-width: 30rem;
+  overflow: hidden;
 }
-.average-text-section-box{
-    position: relative;
+.average-text-section-box {
+  position: relative;
 }
-.chart-image{
-    width:90%
+.chart-image {
+  width: 90%;
 }
-.gas-tracker{
-    border-left:5px solid #87e0a8;
-    margin: 1rem 2rem;
+.gas-tracker {
+  border-left: 5px solid #87e0a8;
+  margin: 1rem 2rem;
 }
-.gas-tracker-box{
-    display: flex;
+.gas-tracker-box {
+  display: flex;
 }
-.daily-transaction{
-    border-left:5px solid #ffc006;
-    margin: 1rem 2rem;
+.daily-transaction {
+  border-left: 5px solid var(--skyblue);
+  margin: 1rem 2rem;
 }
-.gas-tracker-text{
-    margin-left: 1rem;
-    display: inline-block;
+.gas-tracker-text {
+  margin-left: 1rem;
+  display: inline-block;
 }
-.hash-box-num{
+.hash-box-num {
   font-size: 0.8rem;
   color: var(--darkgrey);
-  background-color: var(--lightgrey) ;
+  background-color: var(--lightgrey);
 }
-.view-box{
+.view-box {
   border: 1px solid var(--darkgrey);
   border-left: 5px solid var(--skyblue);
   border-radius: 5px;
   overflow: hidden;
 }
-.block-num,.hash-box-num{
-  padding:1rem;
+.block-num,
+.hash-box-num {
+  padding: 1rem;
 }
-.hash-num, .block-num{
+.hash-num,
+.block-num {
   color: var(--skyblue);
 }
-.view-box-container{
+.view-box-container {
   padding-top: 2rem;
   width: 100%;
-  height: 15rem;
+  height: 14rem;
   overflow: hidden;
 }
 
-.css-bhp9pd-MuiPaper-root-MuiCard-root{
+.css-bhp9pd-MuiPaper-root-MuiCard-root {
   background-color: transparent !important;
+}
+.nothing {
+  position: relative;
+}
+.nothing-show {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.apexcharts-text tspan {
+  fill: white !important;
 }
 /* ///media query//// */
 
-@media screen and (max-width:450px) {
-  .transfer-text{
+@media screen and (max-width: 450px) {
+  .transfer-text {
     display: inline-block;
     margin: 1rem;
   }
 }
 
-
-
 @media screen and (min-width: 900px) {
- .transaction-hash-time{
+  .transaction-hash-time {
     text-align: right;
     padding-left: 1rem;
- }
- .appex{
-  padding: 2rem;
-}
-
   }
+  .appex {
+    padding: 2rem;
+  }
+  .average-text-section {
+    height: 15rem;
+  }
+}
 @media screen and (max-width: 900px) {
   .transaction-success-border {
     height: 5rem;
     background-color: var(--white1);
   }
-  .average-time{
-    margin: 1rem  !important;
-   }
+  .average-time {
+    margin: 1rem !important;
+  }
 }
-@media screen and (min-width:1200px) {
-    .average-text-section{
-        position: absolute;
-        bottom: 0;
-        border: 10px 10px 0px 0px;
-        padding:4rem 1rem
-    }
+@media screen and (min-width: 1200px) {
+  .average-text-section {
+    position: absolute;
+    bottom: 0;
+    border: 10px 10px 0px 0px;
+    padding: 4rem 1rem;
+  }
 }

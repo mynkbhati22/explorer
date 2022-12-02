@@ -9,6 +9,7 @@ import { Chart } from "react-google-charts";
 import axios from "axios";
 import moment from "moment";
 import AppWebsiteVisits from "./AppWebsiteVisits";
+import Slider from "react-slick";
 
 const URL = "https://maalblockchainapi.in.ngrok.io";
 
@@ -37,12 +38,48 @@ function Home() {
   useEffect(() => {
     const interval = setInterval(() => {
       setCounter((counter) => counter + 1);
-    }, 1000);
+    }, 3200);
 
     return () => {
       clearInterval(interval);
     };
   }, []);
+
+  var settings = {
+    dots: true,
+    infinite: false,
+    speed: 100,
+    slidesToShow: 4,
+    slidesToScroll: 4,
+    initialSlide: 0,
+    autoplay: true,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 3,
+          infinite: true,
+          dots: true,
+        },
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          initialSlide: 2,
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
+  };
 
   return (
     <>
@@ -69,7 +106,7 @@ function Home() {
                 ]}
                 chartData={[
                   {
-                    name: "Team C",
+                    name: "Tx/day",
                     type: "line",
                     fill: "solid",
                     data: [30, 25, 36, 30, 45, 35, 64, 52, 59, 36, 39],
@@ -147,11 +184,11 @@ function Home() {
                 <div className="block-text-section">
                   <div className="block-text">Blocks</div>
                   <div className="button-block">
-                    <Button className="view-all-block">View All Blocks</Button>
+                  {/*   <Button className="view-all-block">View All Blocks</Button> */}
                   </div>
                 </div>
                 <Grid container spacing={2} className="view-box-container">
-                  {blockcards && blockcards.length > 0
+                  {/*  {blockcards && blockcards.length > 0
                     ? blockcards.map((res, index) => {
                         return (
                           <Grid item lg={3} md={3} sm={12} xs={12} key={index}>
@@ -175,8 +212,60 @@ function Home() {
                           </Grid>
                         );
                       })
-                    : "NO BLOCKS TO SHOW"}
+                    : "NO BLOCKS TO SHOW"} */}
 
+                  <div>
+                    <Slider {...settings}>
+                      <div>
+                        <div className="view-box">
+                          {" "}
+                          <div className="block-num">16095052</div>
+                          <div className="hash-box-num">
+                            96 Transactions &nbsp; 28 minutes ago <br /> <br />
+                            Miner{" "}
+                            <span className="hash-num">
+                              {" "}
+                              0xF2f5C73fa04406b1995e397B55c24..
+                            </span>{" "}
+                            <br />
+                            Reward 0.024999608605706074 ETH
+                          </div>
+                        </div>
+                      </div>
+                      <div className="view-box">
+                        {" "}
+                        <div className="block-num">16095052</div>
+                        <div className="hash-box-num">
+                          96 Transactions &nbsp; 28 minutes ago <br /> <br />
+                          Miner{" "}
+                          <span className="hash-num">
+                            {" "}
+                            0xF2f5C73fa04406b1995e397B55c24..
+                          </span>{" "}
+                          <br />
+                          Reward 0.024999608605706074 ETH
+                        </div>
+                      </div>
+                      <div>
+                        <h3>3</h3>
+                      </div>
+                      <div>
+                        <h3>4</h3>
+                      </div>
+                      <div>
+                        <h3>5</h3>
+                      </div>
+                      <div>
+                        <h3>6</h3>
+                      </div>
+                      <div>
+                        <h3>7</h3>
+                      </div>
+                      <div>
+                        <h3>8</h3>
+                      </div>
+                    </Slider>
+                  </div>
                   {/* <Grid item lg={3} md={3} sm={12} xs={12}>
                     <div className="view-box">
                       {" "}
@@ -199,9 +288,9 @@ function Home() {
                 <div className="block-text-section">
                   <div className="block-text">Transactions</div>
                   <div className="button-block">
-                    <Button className="view-all-block">
+          {/*           <Button className="view-all-block">
                       View All Transactions
-                    </Button>
+                    </Button> */}
                   </div>
                 </div>
                 <div className="transaction-box">

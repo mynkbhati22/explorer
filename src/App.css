@@ -31,9 +31,14 @@ html{
 
 
 /* /////////////media-query//////////////////////// */
+@media screen and (min-width:1600px) {
+  html{
+    font-size: 100% ;
+  }
+}
 @media screen and (max-width:1600px) {
 .container-explorer{
-  width: 85%;
+  width: 95%;
   display: block;
   margin: 0 auto;
 }

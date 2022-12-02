@@ -72,7 +72,7 @@ html{
 }
 @media screen and (max-width:750px) {
   html{
-    font-size: 75%;
+    font-size: 80%;
   }
   .container-explorer{
     width: 90%;
@@ -82,7 +82,7 @@ html{
 }
 @media screen and (max-width:600px) {
   html{
-    font-size: 70%;
+    font-size: 80%;
   }
   .container-explorer{
     width: 95%;

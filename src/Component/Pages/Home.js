@@ -1,12 +1,32 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Grid, Box } from "@mui/material";
 import "./Home.css";
 import Navbar from "./Navbar";
 import { Button } from "react-bootstrap";
 import Footer from "./Footer";
 import chart from "../Images/chart.png";
+import axios from "axios";
+import moment from "moment";
+
+const URL = "https://maalblockchainapi.in.ngrok.io";
+
+var currentTime = new Date().getTime() / 1000;
+// var formatted = moment(currentTime).format("hh:MM:ss");
 
 function Home() {
+  const [blockcards, setBlockcards] = useState([]);
+
+  useEffect(() => {
+    try {
+      axios.get(`${URL}/api/getblockcards`).then((res) => {
+        setBlockcards(res.data);
+        console.log("gettingblockcards", res.data);
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  }, []);
+
   return (
     <>
       <Navbar />
@@ -77,7 +97,7 @@ function Home() {
         </Grid>
       </Box>
 
-      {/* /////////////////////////////////////////////////////////////// */}
+      {/* /////////////////////////////// BLOCK SECTION //////////////////////////////// */}
 
       <Box className="Block-section">
         <Grid className="container-explorer section-margin">
@@ -91,93 +111,49 @@ function Home() {
                   </div>
                 </div>
                 <Grid container spacing={2} className="view-box-container">
-                <Grid item lg={3} md={3} sm={12} xs={12}>
-                <div className="view-box">
-                  {" "}
-                  <div className="block-num">16095052</div>
-                  <div className="hash-box-num">
-                    96 Transactions &nbsp; 28 minutes ago <br /> <br />
-                    Miner{" "}
-                    <span className="hash-num">
+                  {blockcards && blockcards.length > 0
+                    ? blockcards.map((res, index) => {
+                        return (
+                          <Grid item lg={3} md={3} sm={12} xs={12} key={index}>
+                            <div className="view-box">
+                              {" "}
+                              <div className="block-num">
+                                {res.blocknummber}
+                              </div>
+                              <div className="hash-box-num">
+                                {res.blocktranscations} Transactions &nbsp;{" "}
+                                {currentTime} seconds ago <br /> <br />
+                                Miner{" "}
+                                <span className="hash-num">
+                                  {" "}
+                                  {Number(res.mineraddress).toFixed(27)}...
+                                </span>{" "}
+                                <br />
+                                Reward {res.Reward}
+                              </div>
+                            </div>
+                          </Grid>
+                        );
+                      })
+                    : "NO BLOCKS TO SHOW"}
+
+                  {/* <Grid item lg={3} md={3} sm={12} xs={12}>
+                    <div className="view-box">
                       {" "}
-                      0xF2f5C73fa04406b1995e397B55c24..
-                    </span>{" "}
-                    <br />
-                    Reward 0.024999608605706074 ETH
-                  </div>
-                </div>
+                      <div className="block-num">16095052</div>
+                      <div className="hash-box-num">
+                        96 Transactions &nbsp; 28 minutes ago <br /> <br />
+                        Miner{" "}
+                        <span className="hash-num">
+                          {" "}
+                          0xF2f5C73fa04406b1995e397B55c24..
+                        </span>{" "}
+                        <br />
+                        Reward 0.024999608605706074 ETH
+                      </div>
+                    </div>
+                  </Grid> */}
                 </Grid>
-                <Grid item lg={3} md={3} sm={12} xs={12}>
-                <div className="view-box">
-                  {" "}
-                  <div className="block-num">16095052</div>
-                  <div className="hash-box-num">
-                    96 Transactions &nbsp; 28 minutes ago <br /> <br />
-                    Miner{" "}
-                    <span className="hash-num">
-                      {" "}
-                      0xF2f5C73fa04406b1995e397B55c24..
-                    </span>{" "}
-                    <br />
-                    Reward 0.024999608605706074 ETH
-                  </div>
-                </div>
-                </Grid>
-                <Grid item lg={3} md={3} sm={12} xs={12}>
-                <div className="view-box">
-                  {" "}
-                  <div className="block-num">16095052</div>
-                  <div className="hash-box-num">
-                    96 Transactions &nbsp; 28 minutes ago <br /> <br />
-                    Miner{" "}
-                    <span className="hash-num">
-                      {" "}
-                      0xF2f5C73fa04406b1995e397B55c24..
-                    </span>{" "}
-                    <br />
-                    Reward 0.024999608605706074 ETH
-                  </div>
-                </div>
-                </Grid>
-                <Grid item lg={3} md={3} sm={12} xs={12}>
-                <div className="view-box">
-                  {" "}
-                  <div className="block-num">16095052</div>
-                  <div className="hash-box-num">
-                    96 Transactions &nbsp; 28 minutes ago <br /> <br />
-                    Miner{" "}
-                    <span className="hash-num">
-                      {" "}
-                      0xF2f5C73fa04406b1995e397B55c24..
-                    </span>{" "}
-                    <br />
-                    Reward 0.024999608605706074 ETH
-                  </div>
-                </div>
-                </Grid>
-                <Grid item lg={3} md={3} sm={12} xs={12}>
-                <div className="view-box">
-                  {" "}
-                  <div className="block-num">16095052</div>
-                  <div className="hash-box-num">
-                    96 Transactions &nbsp; 28 minutes ago <br /> <br />
-                    Miner{" "}
-                    <span className="hash-num">
-                      {" "}
-                      0xF2f5C73fa04406b1995e397B55c24..
-                    </span>{" "}
-                    <br />
-                    Reward 0.024999608605706074 ETH
-                  </div>
-                </div>
-                </Grid>
-                </Grid>
-                {/*      <Grid container>
-                  <Grid item xl={3} lg={3} md={4} sm={6} xs={12}></Grid>
-                  <Grid item xl={3} lg={3} md={4} sm={6} xs={12}></Grid>
-                  <Grid item xl={3} lg={3} md={4} sm={6} xs={12}></Grid>
-                  <Grid item xl={3} lg={3} md={4} sm={6} xs={12}></Grid>
-                </Grid> */}
               </div>
               <div className="Block-section-margin">
                 <div className="block-text-section">

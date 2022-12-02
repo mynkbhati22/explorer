@@ -12,3 +12,7 @@ label[data-shrink=false]+.MuiInputBase-formControl .css-1t8l2tu-MuiInputBase-inp
     display: block !important;
     margin: 0 auto !important;
 }
+.block-heading{
+    margin-bottom: 2rem;
+    text-align: center;
+}

@@ -68,6 +68,12 @@
   padding-right: 1rem;
   padding-left: 1rem;
 }
+.css-1j30m50{
+  padding-bottom: 10px !important;
+}
+.css-185gdzj-MuiCardHeader-root{
+  display: none;
+}
 .transaction-success-border {
   position: relative;
   text-align: center;

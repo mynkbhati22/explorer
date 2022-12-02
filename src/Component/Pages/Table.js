@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect,Link } from "react";
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
 import TableCell from "@mui/material/TableCell";
@@ -57,7 +57,7 @@ export default function BasicTable() {
                     </TableCell>
                     <TableCell align="center">{res.Reward}</TableCell>
                     <TableCell align="center">
-                      <Button variant="info">Update</Button>
+                    <Link to="/update">  <Button variant="info">Update</Button></Link>
                     </TableCell>
                     <TableCell align="center">
                       <Button variant="danger">Delete</Button>

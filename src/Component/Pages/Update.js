@@ -46,9 +46,7 @@ function Admin() {
       <Navbar />
       <div className="container-explorer">
         <div className="admin-container">
-          <div>
-            <h4 className="block-heading">BLOCK</h4>
-          </div>
+        <div><h4 className="block-heading">BLOCK</h4></div>
           <Form onSubmit={addBlockCard}>
             <Form.Group className="mb-3" controlId="formBasicText">
               <Form.Label>Enter Block Number</Form.Label>
@@ -90,73 +88,14 @@ function Admin() {
                 onChange={(e) => setReward(e.target.value)}
               />
             </Form.Group>
-            <Form.Group className="mb-3" controlId="formBasicText">
-              <Form.Label>Transaction Success</Form.Label>
-              <Form.Control
-                type="text"
-                required
-                placeholder="Transaction Success"
-                value={Reward}
-                onChange={(e) => setReward(e.target.value)}
-              />
-            </Form.Group>
-            <Form.Group className="mb-3" controlId="formBasicText">
-              <Form.Label>Transfer Transaction</Form.Label>
-              <Form.Control
-                type="text"
-                required
-                placeholder="Transfer Transaction"
-                value={Reward}
-                onChange={(e) => setReward(e.target.value)}
-              />
-            </Form.Group>
-            <Form.Group className="mb-3" controlId="formBasicText">
-              <Form.Label>Transaction Fee</Form.Label>
-              <Form.Control
-                type="text"
-                required
-                placeholder="Transaction Fee"
-                value={Reward}
-                onChange={(e) => setReward(e.target.value)}
-              />
-            </Form.Group>
-            <Form.Group className="mb-3" controlId="formBasicText">
-              <Form.Label>Wallet from</Form.Label>
-              <Form.Control
-                type="text"
-                required
-                placeholder="Wallet from"
-                value={Reward}
-                onChange={(e) => setReward(e.target.value)}
-              />
-            </Form.Group>
-            <Form.Group className="mb-3" controlId="formBasicText">
-              <Form.Label>Wallet to</Form.Label>
-              <Form.Control
-                type="text"
-                required
-                placeholder="Wallet to"
-                value={Reward}
-                onChange={(e) => setReward(e.target.value)}
-              />
-            </Form.Group>
-            <Form.Group className="mb-3" controlId="formBasicText">
-              <Form.Label>Time</Form.Label>
-              <Form.Control
-                type="text"
-                required
-                placeholder="Time"
-                value={Reward}
-                onChange={(e) => setReward(e.target.value)}
-              />
-            </Form.Group>
             <Button variant="primary" type="submit">
               Create a Block
             </Button>
           </Form>
         </div>
+        
 
-        <Table />
+    
       </div>
       <ToastContainer
         position="top-center"

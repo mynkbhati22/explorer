@@ -1,3 +1,17 @@
-#table-transaction{
-    margin: 3rem 0rem ;
+#table-transaction {
+  margin: 3rem 0rem;
+}
+
+.nodatatoshow {
+  height: 33vh;
+}
+
+h5.nodata {
+  position: absolute;
+  left: 45%;
+  top: 50%;
+  transform: translate(-36%, 30%);
+}
+table.MuiTable-root.css-quj9j6-MuiTable-root {
+  position: relative;
 }

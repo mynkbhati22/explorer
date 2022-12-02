@@ -24,6 +24,7 @@ function Admin() {
   // FOR ADDING TRANSCATION
 
   const [transcationsuccess, setTranscationsuccess] = useState();
+  const [transcationblocknummber, setTBlockNumber] = useState();
   const [transfertranscation, setTransferTranscation] = useState();
   const [transcationfee, setTranscationFee] = useState();
   const [fromwalletaddress, setFomWalletAddress] = useState();
@@ -70,10 +71,11 @@ function Admin() {
       };
       axios
         .post(
-          `${URL}/api/addingtranscation}`,
+          `${URL}/api/addingtranscation`,
           {
             transcationsuccess: transcationsuccess,
             transfertranscation: transfertranscation,
+            transcationblocknummber: transcationblocknummber,
             transcationfee: transcationfee,
             fromwalletaddress: fromwalletaddress,
             towalletaddress: towalletaddress,
@@ -216,6 +218,16 @@ function Admin() {
                 placeholder="Wallet to"
                 value={towalletaddress}
                 onChange={(e) => setToWalletAddress(e.target.value)}
+              />
+            </Form.Group>
+            <Form.Group className="mb-3" controlId="formBasicText">
+              <Form.Label>Block Number</Form.Label>
+              <Form.Control
+                type="text"
+                required
+                placeholder="block number"
+                value={transcationblocknummber}
+                onChange={(e) => setTBlockNumber(e.target.value)}
               />
             </Form.Group>
             <Form.Group className="mb-3" controlId="formBasicText">

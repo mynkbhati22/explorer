@@ -19,15 +19,30 @@ let blocknummber;
 
 function Home() {
   const [blockcards, setBlockcards] = useState([]); //FOR GETTING API DATA
+  const [transcationDetails, setTranscationDetails] = useState([]); //FOR GETTING API DATA
   const [counter, setCounter] = useState(blocknummber); //FOR INCREASING COUNTING
 
-  // FOR CALLING API
+  // FOR CALLING BLOCKS API
 
   useEffect(() => {
     const blockcardinterval = setInterval(() => {
       axios.get(`${URL}/api/getblockcards`).then((res) => {
         setBlockcards(res.data);
         console.log("gettingblockcards", res.data);
+      });
+    }, 1000);
+    return () => {
+      clearInterval(blockcardinterval);
+    };
+  }, []);
+
+  // FOR CALLING TRANSCATION API
+
+  useEffect(() => {
+    const blockcardinterval = setInterval(() => {
+      axios.get(`${URL}/api/gettranscationstatus`).then((res) => {
+        setTranscationDetails(res.data);
+        console.log("gettingtranscationdetails", res.data);
       });
     }, 1000);
     return () => {
@@ -296,8 +311,8 @@ function Home() {
                     </Button> */}
                   </div>
                 </div>
-                {/* {blockcards && blockcards.length > 0 ? (
-                  blockcards.map((res, index) => {
+                {transcationDetails && transcationDetails.length > 0 ? (
+                  transcationDetails.map((res, index) => {
                     return (
                       <div className="transaction-box" key={index}>
                         <Grid container>
@@ -346,9 +361,11 @@ function Home() {
                           <Grid item xl={3} lg={3} md={3} sm={12} xs={12}>
                             <div className="transaction-hash-time">
                               {" "}
-                              {res.blocknummber}
-                              <br />
-                              {res.time}
+                              Block Number#{res.transcationblocknummber}
+                            </div>
+                            <div className="transaction-hash-time">
+                              {" "}
+                              {res.time} hours ago
                             </div>
                           </Grid>
                         </Grid>
@@ -359,7 +376,7 @@ function Home() {
                   <div className="nodatatoshow">
                     <h5 className="nodata"> NO TRANSCATIONS TO SHOW</h5>
                   </div>
-                )} */}
+                )}
 
                 {/* <div className="transaction-box">
                   <Grid container>

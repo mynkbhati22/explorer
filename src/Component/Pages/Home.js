@@ -118,12 +118,12 @@ function Home() {
                 <div className="gas-tracker">
                   <span className="gas-tracker-text">
                     Gas tracker <br />
-                    0.4 Gwei
+                    0.2 Gwei
                   </span>
                 </div>
                 <div className="daily-transaction">
                   <span className="gas-tracker-text">
-                    Daily Transactions <br />0
+                    Daily Transactions <br />17
                   </span>
                 </div>
               </div>
@@ -164,8 +164,7 @@ function Home() {
                   {" "}
                   <Box className="average-time">
                     <div className="text-average">Wallet addresses</div>
-
-                    <div className="time-explorer">0</div>
+                    <div className="time-explorer">837</div>
                   </Box>
                 </Grid>
               </Grid>

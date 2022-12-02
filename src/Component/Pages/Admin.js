@@ -102,7 +102,7 @@ function Admin() {
                 onChange={(e) => setReward(e.target.value)}
               />
             </Form.Group>
-            <Form.Group className="mb-3" controlId="formBasicText">
+    {/*         <Form.Group className="mb-3" controlId="formBasicText">
               <Form.Label>Transaction Success</Form.Label>
               <Form.Control
                 type="text"
@@ -111,7 +111,7 @@ function Admin() {
                 value={transcationsuccess}
                 onChange={(e) => setTranscationsuccess(e.target.value)}
               />
-            </Form.Group>
+            </Form.Group> */}
             <Form.Group className="mb-3" controlId="formBasicText">
               <Form.Label>Transfer Transaction</Form.Label>
               <Form.Control

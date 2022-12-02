@@ -112,7 +112,7 @@ function Home() {
                 ]}
                 chartData={[
                   {
-                    name: "Tx/day",
+                    name: "GCS Price",
                     type: "line",
                     fill: "solid",
                     data: [
@@ -283,7 +283,7 @@ function Home() {
                 </Grid>
               </div>
 
-              <div className="Block-section-margin position-relative">
+              <div className="Block-section-margin block-section Block position-relative">
                 <div className="block-text-section">
                   <div className="block-text">Transactions</div>
                   <div className="button-block">

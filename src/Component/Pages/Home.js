@@ -15,10 +15,11 @@ const URL = "https://maalblockchainapi.in.ngrok.io";
 
 var currentTime = new Date().getTime() / 1000;
 // var formatted = moment(currentTime).format("hh:MM:ss");
+let blocknummber;
 
 function Home() {
   const [blockcards, setBlockcards] = useState([]); //FOR GETTING API DATA
-  const [counter, setCounter] = useState(1014); //FOR INCREASING COUNTING
+  const [counter, setCounter] = useState(blocknummber); //FOR INCREASING COUNTING
 
   // FOR CALLING API
 
@@ -38,7 +39,7 @@ function Home() {
 
   useEffect(() => {
     const interval = setInterval((res) => {
-      setCounter((counter) => (blockcards ? 0 : counter + 1));
+      setCounter((counter) => (counter ? "0" : counter + 1));
     }, 3200);
 
     return () => {
@@ -218,7 +219,10 @@ function Home() {
                               Miner{" "}
                               <span className="hash-num">
                                 {" "}
-                                {Number(res.mineraddress).toFixed(27)}...
+                                {res.mineraddress
+                                  ? res.mineraddress
+                                  : "0x0000000000000000000000000000"}
+                                ...
                               </span>{" "}
                               <br />
                               Reward {res.Reward} MAAL
@@ -229,7 +233,7 @@ function Home() {
                     })
                   ) : (
                     <div className="nodatatoshow">
-                      <h5 className="nodata"> NO BLOCK TO SHOW</h5>
+                      <h5 className="nodata"> NO BLOCKS TO SHOW</h5>
                     </div>
                   )}
 
@@ -292,7 +296,7 @@ function Home() {
                     </Button> */}
                   </div>
                 </div>
-                {blockcards && blockcards.length > 0 ? (
+                {/* {blockcards && blockcards.length > 0 ? (
                   blockcards.map((res, index) => {
                     return (
                       <div className="transaction-box" key={index}>
@@ -355,7 +359,7 @@ function Home() {
                   <div className="nodatatoshow">
                     <h5 className="nodata"> NO TRANSCATIONS TO SHOW</h5>
                   </div>
-                )}
+                )} */}
 
                 {/* <div className="transaction-box">
                   <Grid container>

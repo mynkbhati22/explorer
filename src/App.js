@@ -3,6 +3,7 @@ import Home from "./Component/Pages/Home";
 import Admin from "./Component/Pages/Admin";
 import Update from "./Component/Pages/Update";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import TranscationUpdate from "./Component/Pages/TranscationUpdate";
 
 function App() {
   return (
@@ -12,7 +13,11 @@ function App() {
           {/*    <Home /> */}
           <Route exact path="/" element={<Home />} />
           <Route path="/admin" element={<Admin />} />
-          <Route path="/update" element={<Update />} />
+          <Route path="/update/:id" element={<Update />} />
+          <Route
+            path="/updatetranscationdetails/:id"
+            element={<TranscationUpdate />}
+          />
         </Routes>
       </Router>
     </>

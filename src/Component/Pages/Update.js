@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { Form, Button } from "react-bootstrap";
 import Navbar from "./Navbar";
-import Table from "./Table";
 import Footer from "./Footer";
 import "./Admin.css";
 import { ToastContainer, toast } from "react-toastify";
@@ -11,7 +10,7 @@ import "react-toastify/dist/ReactToastify.css";
 
 const URL = "https://maalblockchainapi.in.ngrok.io";
 
-function Admin() {
+function Update() {
   const [blocknummber, setBlockNumber] = useState();
   const [mineraddress, setMinerAddress] = useState();
   const [blocktranscations, setBlockTranscations] = useState();
@@ -46,7 +45,9 @@ function Admin() {
       <Navbar />
       <div className="container-explorer">
         <div className="admin-container">
-        <div><h4 className="block-heading">BLOCK</h4></div>
+          <div>
+            <h4 className="block-heading">BLOCK</h4>
+          </div>
           <Form onSubmit={addBlockCard}>
             <Form.Group className="mb-3" controlId="formBasicText">
               <Form.Label>Enter Block Number</Form.Label>
@@ -93,9 +94,6 @@ function Admin() {
             </Button>
           </Form>
         </div>
-        
-
-    
       </div>
       <ToastContainer
         position="top-center"
@@ -113,4 +111,4 @@ function Admin() {
   );
 }
 
-export default Admin;
+export default Update;

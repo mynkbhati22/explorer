@@ -13,16 +13,15 @@ import { Link, useParams } from "react-router-dom";
 
 const URL = "https://maalblockchainapi.in.ngrok.io";
 
-export default function BasicTable() {
-  const [blockcards, setBlockcards] = useState([]); //FOR GETTING API DATA
-
+export default function TranscationTable() {
+  const [transactiondetails, setTranscationDetails] = useState([]); //FOR GETTING API DATA
   const { id } = useParams();
   console.log(id);
 
   useEffect(() => {
     try {
-      axios.get(`${URL}/api/getblockcards`).then((res) => {
-        setBlockcards(res.data);
+      axios.get(`${URL}/api/gettranscationstatus`).then((res) => {
+        setTranscationDetails(res.data);
         console.log("gettingblockcards", res.data);
       });
     } catch (error) {
@@ -31,44 +30,44 @@ export default function BasicTable() {
   }, []);
 
   return (
-    <>
-      {/* TABLE FOR SEEING BLOCKCARDS */}
+    <div>
+      {/* TABLE FOR SEEING TRANSCATION */}
 
       <div id="table-transaction">
         <TableContainer component={Paper}>
           <Table sx={{ minWidth: 650 }} aria-label="simple table">
             <TableHead>
               <TableRow>
-                <TableCell align="center"> Block Number</TableCell>
-                <TableCell align="center">Miner Address</TableCell>
-                <TableCell align="center">No. of Transaction Made</TableCell>
-                <TableCell align="center">Reward</TableCell>
+                <TableCell align="center"> Transaction Status</TableCell>
+                <TableCell align="center">Transaction Transfer</TableCell>
+                <TableCell align="center">Transaction Fee</TableCell>
+                <TableCell align="center">Transcation Transfer from</TableCell>
+                <TableCell align="center">Transcation Transfer to</TableCell>
                 <TableCell align="center">Update</TableCell>
                 <TableCell align="center">Delete</TableCell>
               </TableRow>
             </TableHead>
             <TableBody>
-              {blockcards && blockcards.length > 0 ? (
-                blockcards.map((res, index) => (
+              {transactiondetails && transactiondetails.length > 0 ? (
+                transactiondetails.map((res, index) => (
                   <TableRow
                     key={index}
                     sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
                   >
                     <TableCell align="center" component="th" scope="res">
-                      {res.blocknummber}
+                      {res.transcationsuccess}
                     </TableCell>
                     <TableCell align="center">
-                      {res.mineraddress
-                        ? res.mineraddress
-                        : "0x0000000000000000000000000000"}
-                      ...
+                      {res.transfertranscation}
                     </TableCell>
+                    <TableCell align="center">{res.transcationfee}</TableCell>
                     <TableCell align="center">
-                      {res.blocktranscations}
+                      {res.fromwalletaddress}
                     </TableCell>
-                    <TableCell align="center">{res.Reward}</TableCell>
+                    <TableCell align="center">{res.towalletaddress}</TableCell>
+                    <TableCell align="center">{res.time}</TableCell>
                     <TableCell align="center">
-                      <Link to={`/update/${res._id}`}>
+                      <Link to={`/updatetranscationdetails/${res._id}`}>
                         {" "}
                         <Button variant="info">Update</Button>
                       </Link>
@@ -87,6 +86,6 @@ export default function BasicTable() {
           </Table>
         </TableContainer>
       </div>
-    </>
+    </div>
   );
 }

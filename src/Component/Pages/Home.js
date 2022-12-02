@@ -50,7 +50,7 @@ function Home() {
                 <Grid item lg={3} md={3} sm={12} xs={12}>
                   {" "}
                   <Box className="average-time">
-                    <div className="text-average">Average block time</div>
+                    <div className="text-average">Total transaction</div>
 
                     <div className="time-explorer">2.0 seconds</div>
                   </Box>
@@ -58,7 +58,7 @@ function Home() {
                 <Grid item lg={3} md={3} sm={12} xs={12}>
                   {" "}
                   <Box className="average-time">
-                    <div className="text-average">Average block time</div>
+                    <div className="text-average">Total blocks</div>
 
                     <div className="time-explorer">2.0 seconds</div>
                   </Box>
@@ -66,7 +66,7 @@ function Home() {
                 <Grid item lg={3} md={3} sm={12} xs={12}>
                   {" "}
                   <Box className="average-time">
-                    <div className="text-average">Average block time</div>
+                    <div className="text-average">Wallet addresses</div>
 
                     <div className="time-explorer">2.0 seconds</div>
                   </Box>

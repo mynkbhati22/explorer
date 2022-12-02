@@ -23,16 +23,14 @@ function Home() {
   // FOR CALLING API
 
   useEffect(() => {
-    const cardinterval = setInterval(() => {
-      try {
-        axios.get(`${URL}/api/getblockcards`).then((res) => {
-          setBlockcards(res.data);
-          console.log("gettingblockcards", res.data);
-        });
-      } catch (error) {
-        console.log(error);
-      }
-    });
+    try {
+      axios.get(`${URL}/api/getblockcards`).then((res) => {
+        setBlockcards(res.data);
+        console.log("gettingblockcards", res.data);
+      });
+    } catch (error) {
+      console.log(error);
+    }
   }, []);
 
   // FOR INCREASING COUNTING

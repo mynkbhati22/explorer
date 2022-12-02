@@ -1,4 +1,4 @@
-import React, { useState, useEffect,Link } from "react";
+import React, { useState, useEffect } from "react";
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
 import TableCell from "@mui/material/TableCell";
@@ -9,6 +9,7 @@ import Paper from "@mui/material/Paper";
 import "./Table.css";
 import { Button } from "react-bootstrap";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 const URL = "https://maalblockchainapi.in.ngrok.io";
 
@@ -57,7 +58,10 @@ export default function BasicTable() {
                     </TableCell>
                     <TableCell align="center">{res.Reward}</TableCell>
                     <TableCell align="center">
-                    <Link to="/update">  <Button variant="info">Update</Button></Link>
+                      <Link to="/update">
+                        {" "}
+                        <Button variant="info">Update</Button>
+                      </Link>
                     </TableCell>
                     <TableCell align="center">
                       <Button variant="danger">Delete</Button>

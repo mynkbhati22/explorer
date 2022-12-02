@@ -16,6 +16,12 @@ function Admin() {
   const [mineraddress, setMinerAddress] = useState();
   const [blocktranscations, setBlockTranscations] = useState();
   const [Reward, setReward] = useState();
+  const [transcationsuccess, setTranscationsuccess] = useState();
+  const [transfertranscation, setTransferTranscation] = useState();
+  const [transcationfee, setTranscationFee] = useState();
+  const [fromwalletaddress, setFomWalletAddress] = useState();
+  const [towalletaddress, setToWalletAddress] = useState();
+  const [time, setTime] = useState();
 
   const addBlockCard = async (e) => {
     e.preventDefault();
@@ -32,6 +38,12 @@ function Admin() {
           mineraddress: mineraddress,
           blocktranscations: blocktranscations,
           Reward: Reward,
+          transcationsuccess: transcationsuccess,
+          transfertranscation: transfertranscation,
+          transcationfee: transcationfee,
+          fromwalletaddress: fromwalletaddress,
+          towalletaddress: towalletaddress,
+          time: time,
         },
         config
       );
@@ -96,8 +108,8 @@ function Admin() {
                 type="text"
                 required
                 placeholder="Transaction Success"
-                value={Reward}
-                onChange={(e) => setReward(e.target.value)}
+                value={transcationsuccess}
+                onChange={(e) => setTranscationsuccess(e.target.value)}
               />
             </Form.Group>
             <Form.Group className="mb-3" controlId="formBasicText">
@@ -106,8 +118,8 @@ function Admin() {
                 type="text"
                 required
                 placeholder="Transfer Transaction"
-                value={Reward}
-                onChange={(e) => setReward(e.target.value)}
+                value={transfertranscation}
+                onChange={(e) => setTransferTranscation(e.target.value)}
               />
             </Form.Group>
             <Form.Group className="mb-3" controlId="formBasicText">
@@ -116,8 +128,8 @@ function Admin() {
                 type="text"
                 required
                 placeholder="Transaction Fee"
-                value={Reward}
-                onChange={(e) => setReward(e.target.value)}
+                value={transcationfee}
+                onChange={(e) => setTranscationFee(e.target.value)}
               />
             </Form.Group>
             <Form.Group className="mb-3" controlId="formBasicText">
@@ -126,8 +138,8 @@ function Admin() {
                 type="text"
                 required
                 placeholder="Wallet from"
-                value={Reward}
-                onChange={(e) => setReward(e.target.value)}
+                value={fromwalletaddress}
+                onChange={(e) => setFomWalletAddress(e.target.value)}
               />
             </Form.Group>
             <Form.Group className="mb-3" controlId="formBasicText">
@@ -136,8 +148,8 @@ function Admin() {
                 type="text"
                 required
                 placeholder="Wallet to"
-                value={Reward}
-                onChange={(e) => setReward(e.target.value)}
+                value={towalletaddress}
+                onChange={(e) => setToWalletAddress(e.target.value)}
               />
             </Form.Group>
             <Form.Group className="mb-3" controlId="formBasicText">
@@ -146,8 +158,8 @@ function Admin() {
                 type="text"
                 required
                 placeholder="Time"
-                value={Reward}
-                onChange={(e) => setReward(e.target.value)}
+                value={time}
+                onChange={(e) => setTime(e.target.value)}
               />
             </Form.Group>
             <Button variant="primary" type="submit">

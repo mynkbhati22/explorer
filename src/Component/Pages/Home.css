@@ -149,9 +149,7 @@
   height: 15rem;
   overflow: hidden;
 }
-.appex{
-  padding: 2rem;
-}
+
 
 /* ///media query//// */
 
@@ -169,6 +167,9 @@
     text-align: right;
     padding-left: 1rem;
  }
+ .appex{
+  padding: 2rem;
+}
 
   }
 @media screen and (max-width: 900px) {

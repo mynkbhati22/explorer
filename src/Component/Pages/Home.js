@@ -204,7 +204,7 @@ function Home() {
                                 {Number(res.mineraddress).toFixed(27)}...
                               </span>{" "}
                               <br />
-                              Reward {res.Reward}
+                              Reward {res.Reward} MAAL
                             </div>
                           </div>
                         </Grid>
@@ -265,7 +265,8 @@ function Home() {
                   </Grid> */}
                 </Grid>
               </div>
-              <div className="Block-section-margin">
+
+              <div className="Block-section-margin position-relative">
                 <div className="block-text-section">
                   <div className="block-text">Transactions</div>
                   <div className="button-block">
@@ -274,119 +275,72 @@ function Home() {
                     </Button> */}
                   </div>
                 </div>
-                <div className="transaction-box">
-                  <Grid container>
-                    <Grid
-                      item
-                      xl={2}
-                      lg={2}
-                      md={2}
-                      sm={12}
-                      xs={12}
-                      className="transaction-success-border"
-                    >
-                      <div className="transaction-success">
-                        <div className="transaction-success-text">
-                          {" "}
-                          <span className="transaction-word">
-                            {" "}
-                            Transaction{" "}
-                          </span>{" "}
-                          <br />
-                          <span className="success-text"> Success </span>{" "}
-                        </div>
+                {blockcards && blockcards.length > 0 ? (
+                  blockcards.map((res, index) => {
+                    return (
+                      <div className="transaction-box" key={index}>
+                        <Grid container>
+                          <Grid
+                            item
+                            xl={2}
+                            lg={2}
+                            md={2}
+                            sm={12}
+                            xs={12}
+                            className="transaction-success-border"
+                          >
+                            <div className="transaction-success">
+                              <div className="transaction-success-text">
+                                {" "}
+                                <span className="transaction-word">
+                                  {" "}
+                                  {res.transcationsuccess}
+                                </span>{" "}
+                              </div>
+                            </div>
+                          </Grid>
+                          <Grid
+                            item
+                            xl={7}
+                            lg={7}
+                            md={7}
+                            sm={12}
+                            xs={12}
+                            className="transaction-hash-box"
+                          >
+                            <p className="transaction-hash">
+                              {" "}
+                              <p>
+                                <span className="hash-value">
+                                  {res.transfertranscation}{" "}
+                                </span>
+                                <span className="transfer-text">Transfer</span>
+                              </p>
+                              <p>
+                                {res.fromwalletaddress} → {res.towalletaddress}
+                              </p>
+                              <p> $ {res.transcationfee} MAAL TX Fee</p>
+                            </p>
+                          </Grid>
+                          <Grid item xl={3} lg={3} md={3} sm={12} xs={12}>
+                            <div className="transaction-hash-time">
+                              {" "}
+                              {res.blocknummber}
+                              <br />
+                              {res.time}
+                            </div>
+                          </Grid>
+                        </Grid>
                       </div>
-                    </Grid>
-                    <Grid
-                      item
-                      xl={7}
-                      lg={7}
-                      md={7}
-                      sm={12}
-                      xs={12}
-                      className="transaction-hash-box"
-                    >
-                      <p className="transaction-hash">
-                        {" "}
-                        <p>
-                          <span className="hash-value">
-                            0x43962d00bb793c6662b971572d656bef3019836f8ae52c9d413d57a23e283aa6{" "}
-                          </span>
-                          <span className="transfer-text">Transfer</span>
-                        </p>
-                        <p>
-                          0x228466F2C715CbEC05dEAbfAc040ce3619d7CF0B →
-                          0x5AfD10c68c9fd02018E0683C40c14a781548abf7
-                        </p>
-                        <p>10 Ether 0.000008295282996 TX Fee</p>
-                      </p>
-                    </Grid>
-                    <Grid item xl={3} lg={3} md={3} sm={12} xs={12}>
-                      <div className="transaction-hash-time">
-                        {" "}
-                        Block #6847954
-                        <br />
-                        2day ago
-                      </div>
-                    </Grid>
-                  </Grid>
-                </div>
-                <div className="transaction-box">
-                  <Grid container>
-                    <Grid
-                      item
-                      xl={2}
-                      lg={2}
-                      md={2}
-                      sm={12}
-                      xs={12}
-                      className="transaction-success-border"
-                    >
-                      <div className="transaction-success">
-                        <div className="transaction-success-text">
-                          {" "}
-                          <span className="transaction-word">
-                            {" "}
-                            Transaction{" "}
-                          </span>{" "}
-                          <br />
-                          <span className="success-text"> Success </span>{" "}
-                        </div>
-                      </div>
-                    </Grid>
-                    <Grid
-                      item
-                      xl={7}
-                      lg={7}
-                      md={7}
-                      sm={12}
-                      xs={12}
-                      className="transaction-hash-box"
-                    >
-                      <p className="transaction-hash">
-                        {" "}
-                        <p>
-                          0x43962d00bb793c6662b971572d656bef3019836f8ae52c9d413d57a23e283aa6{" "}
-                          <span className="transfer-text">Transfer</span>
-                        </p>
-                        <p>
-                          0x228466F2C715CbEC05dEAbfAc040ce3619d7CF0B →
-                          0x5AfD10c68c9fd02018E0683C40c14a781548abf7
-                        </p>
-                        <p>10 Ether 0.000008295282996 TX Fee</p>
-                      </p>
-                    </Grid>
-                    <Grid item xl={3} lg={3} md={3} sm={12} xs={12}>
-                      <div className="transaction-hash-time">
-                        {" "}
-                        Block #6847954
-                        <br />
-                        2day ago
-                      </div>
-                    </Grid>
-                  </Grid>
-                </div>
-                <div className="transaction-box">
+                    );
+                  })
+                ) : (
+                  <div className="nodatatoshow">
+                    <h5 className="nodata"> NO TRANSCATIONS TO SHOW</h5>
+                  </div>
+                )}
+
+                {/* <div className="transaction-box">
                   <Grid container>
                     <Grid
                       item
@@ -440,62 +394,7 @@ function Home() {
                       </div>
                     </Grid>
                   </Grid>
-                </div>
-                <div className="transaction-box">
-                  <Grid container>
-                    <Grid
-                      item
-                      xl={2}
-                      lg={2}
-                      md={2}
-                      sm={12}
-                      xs={12}
-                      className="transaction-success-border"
-                    >
-                      <div className="transaction-success">
-                        <div className="transaction-success-text">
-                          {" "}
-                          <span className="transaction-word">
-                            {" "}
-                            Transaction{" "}
-                          </span>{" "}
-                          <br />
-                          <span className="success-text"> Success </span>{" "}
-                        </div>
-                      </div>
-                    </Grid>
-                    <Grid
-                      item
-                      xl={7}
-                      lg={7}
-                      md={7}
-                      sm={12}
-                      xs={12}
-                      className="transaction-hash-box"
-                    >
-                      <p className="transaction-hash">
-                        {" "}
-                        <p>
-                          0x43962d00bb793c6662b971572d656bef3019836f8ae52c9d413d57a23e283aa6{" "}
-                          <span className="transfer-text">Transfer</span>
-                        </p>
-                        <p>
-                          0x228466F2C715CbEC05dEAbfAc040ce3619d7CF0B →
-                          0x5AfD10c68c9fd02018E0683C40c14a781548abf7
-                        </p>
-                        <p>10 Ether 0.000008295282996 TX Fee</p>
-                      </p>
-                    </Grid>
-                    <Grid item xl={3} lg={3} md={3} sm={12} xs={12}>
-                      <div className="transaction-hash-time">
-                        {" "}
-                        Block #6847954
-                        <br />
-                        2day ago
-                      </div>
-                    </Grid>
-                  </Grid>
-                </div>
+                </div> */}
               </div>
             </Grid>
           </Grid>

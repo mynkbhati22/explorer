@@ -182,7 +182,7 @@ function Home() {
         <Grid className="container-explorer section-margin">
           <Grid container>
             <Grid item lg={12} md={12} sm={12} xs={12}>
-              <div className="Block-section-margin">
+              <div className="Block-section-margin position-relative">
                 <div className="block-text-section">
                   <div className="block-text">Blocks</div>
                   <div className="button-block">
@@ -190,31 +190,33 @@ function Home() {
                   </div>
                 </div>
                 <Grid container spacing={2} className="view-box-container">
-                  {blockcards && blockcards.length > 0
-                    ? blockcards.map((res, index) => {
-                        return (
-                          <Grid item lg={3} md={3} sm={12} xs={12} key={index}>
-                            <div className="view-box">
-                              {" "}
-                              <div className="block-num">
-                                {res.blocknummber}
-                              </div>
-                              <div className="hash-box-num">
-                                {res.blocktranscations} Transactions &nbsp;{" "}
-                                {currentTime} seconds ago <br /> <br />
-                                Miner{" "}
-                                <span className="hash-num">
-                                  {" "}
-                                  {Number(res.mineraddress).toFixed(27)}...
-                                </span>{" "}
-                                <br />
-                                Reward {res.Reward}
-                              </div>
+                  {blockcards && blockcards.length > 0 ? (
+                    blockcards.map((res, index) => {
+                      return (
+                        <Grid item lg={3} md={3} sm={12} xs={12} key={index}>
+                          <div className="view-box">
+                            {" "}
+                            <div className="block-num">{res.blocknummber}</div>
+                            <div className="hash-box-num">
+                              {res.blocktranscations} Transactions &nbsp;{" "}
+                              {currentTime} seconds ago <br /> <br />
+                              Miner{" "}
+                              <span className="hash-num">
+                                {" "}
+                                {Number(res.mineraddress).toFixed(27)}...
+                              </span>{" "}
+                              <br />
+                              Reward {res.Reward}
                             </div>
-                          </Grid>
-                        );
-                      })
-                    : "NO BLOCKS TO SHOW"}
+                          </div>
+                        </Grid>
+                      );
+                    })
+                  ) : (
+                    <div className="nodatatoshow">
+                      <h5 className="nodata"> NO BLOCK TO SHOW</h5>
+                    </div>
+                  )}
 
                   {/* <div>
                     <Slider {...settings}>

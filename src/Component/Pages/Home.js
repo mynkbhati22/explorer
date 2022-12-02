@@ -247,7 +247,7 @@ function Home() {
                    .
                     </Slider>
                   </div> */}
-                  <Grid item lg={3} md={3} sm={12} xs={12}>
+                  {/* <Grid item lg={3} md={3} sm={12} xs={12}>
                     <div className="view-box">
                       {" "}
                       <div className="block-num">16095052</div>
@@ -262,7 +262,7 @@ function Home() {
                         Reward 0.024999608605706074 ETH
                       </div>
                     </div>
-                  </Grid>
+                  </Grid> */}
                 </Grid>
               </div>
               <div className="Block-section-margin">

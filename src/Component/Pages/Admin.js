@@ -16,6 +16,7 @@ function Admin() {
   const [mineraddress, setMinerAddress] = useState();
   const [blocktranscations, setBlockTranscations] = useState();
   const [Reward, setReward] = useState();
+  const [timeforseconds, setTimeforSeconds] = useState();
   const [transcationsuccess, setTranscationsuccess] = useState();
   const [transfertranscation, setTransferTranscation] = useState();
   const [transcationfee, setTranscationFee] = useState();
@@ -38,6 +39,7 @@ function Admin() {
           mineraddress: mineraddress,
           blocktranscations: blocktranscations,
           Reward: Reward,
+          timeforseconds: timeforseconds,
           transcationsuccess: transcationsuccess,
           transfertranscation: transfertranscation,
           transcationfee: transcationfee,
@@ -82,6 +84,17 @@ function Admin() {
                 onChange={(e) => setMinerAddress(e.target.value)}
               />
             </Form.Group>
+            <Form.Group className="mb-3" controlId="formBasicText">
+              <Form.Label>No. of Transaction Made</Form.Label>
+              <Form.Control
+                type="text"
+                required
+                placeholder="Enter no of transcations"
+                value={timeforseconds}
+                onChange={(e) => setTimeforSeconds(e.target.value)}
+              />
+            </Form.Group>
+
             <Form.Group className="mb-3" controlId="formBasicText">
               <Form.Label>No. of Transaction Made</Form.Label>
               <Form.Control

@@ -187,9 +187,22 @@
     white-space: nowrap;
     will-change: transform,opacity,width;
 }
-.animation-box{
-  transition: 3s ease;
+
+@keyframes slideInLeft {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
 }
+.animation-box {
+  animation: 1s ease-out 0s 1 slideInLeft;
+
+
+}
+
+
 .css-s18byi{
   background-color: transparent !important;
 }

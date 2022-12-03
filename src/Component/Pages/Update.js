@@ -43,7 +43,7 @@ function Update() {
   return (
     <>
       <Navbar />
-      <div className="container-explorer">
+      <div className="container-explorer container-update">
         <div className="admin-container">
           <div>
             <h4 className="block-heading">BLOCK</h4>

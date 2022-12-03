@@ -18,6 +18,10 @@
 
 html{
   font-size: 100%;
+
+}
+.container-update{
+  min-height: 70vh;
 }
 
 .container-explorer{

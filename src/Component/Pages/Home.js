@@ -171,7 +171,7 @@ function Home() {
                   <Box className="average-time">
                     <div className="text-average">Average block time</div>
 
-                    <div className="time-explorer">0 seconds</div>
+                    <div className="time-explorer">3 seconds</div>
                   </Box>
                 </Grid>
                 <Grid item lg={3} md={3} sm={12} xs={12}>

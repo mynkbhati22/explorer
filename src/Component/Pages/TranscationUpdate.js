@@ -50,7 +50,7 @@ function TranscationUpdate() {
   return (
     <>
       <Navbar />
-      <div className="container-explorer  my-3">
+      <div className="container-explorer container-update  my-3">
         <div className="admin-container">
           <div>
             <h4 className="block-heading">FOR TRANSCATION</h4>

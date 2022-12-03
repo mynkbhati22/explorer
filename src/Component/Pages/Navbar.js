@@ -9,6 +9,7 @@ import blocksvg from "../Images/block.svg";
 import polygonsvg from "../Images/polygon.svg";
 import { IoMdArrowDropdown } from "react-icons/io";
 import { FiSearch } from "react-icons/fi";
+import logo512 from "../Images/logo512.png";
 
 function Navbar() {
   const [show, setShow] = useState(false);
@@ -23,7 +24,7 @@ function Navbar() {
     <>
       <Grid container className="navbar">
         <Grid item xl={3} lg={3} md={9} sm={9} xs={9} className="d-flex">
-          <span> </span>
+          <span><img src={logo512} className="logo-image" alt="" /> </span>
           <span className="logo-name"> MAAL Blockchain</span>
         </Grid>
         <Grid item xl={9} lg={9} md={3} sm={3} xs={3} className="toggle-btn">

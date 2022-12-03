@@ -46,6 +46,12 @@ ul.transaction-list {
   margin-top: 1rem;
   position: absolute;
 }
+.logo-image{
+  width: 2.5rem;
+  height: 2.5rem;
+  margin: 1rem 0rem;
+  margin-left: 1rem;
+}
 ul li {
   cursor: pointer;
 }

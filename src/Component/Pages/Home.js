@@ -20,7 +20,7 @@ let blocknummber;
 function Home() {
   const [blockcards, setBlockcards] = useState([]); //FOR GETTING API DATA
   const [transcationDetails, setTranscationDetails] = useState([]); //FOR GETTING API DATA
-  const [counter, setCounter] = useState(); //FOR INCREASING COUNTING
+  const [counter, setCounter] = useState(273); //FOR INCREASING COUNTING
 
   // FOR CALLING BLOCKS API
 
@@ -53,9 +53,9 @@ function Home() {
   // FOR INCREASING COUNTING
 
   useEffect(() => {
-    const interval = setInterval((res) => {
-      setCounter((counter) => counter + 1);
-    }, 3200);
+    const interval = setInterval(() => {
+      setCounter((counter) => (counter += 3));
+    }, 20000);
 
     return () => {
       clearInterval(interval);
@@ -187,7 +187,7 @@ function Home() {
                   <Box className="average-time">
                     <div className="text-average">Total transaction</div>
 
-                    <div className="time-explorer">273</div>
+                    <div className="time-explorer">{counter}</div>
                   </Box>
                 </Grid>
                 <Grid item lg={3} md={3} sm={12} xs={12}>

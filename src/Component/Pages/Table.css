@@ -1,5 +1,7 @@
 #table-transaction {
   margin: 3rem 0rem;
+  max-height: 30rem;
+  overflow: auto;
 }
 
 .nodatatoshow {

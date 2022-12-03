@@ -44,6 +44,7 @@ ul.transaction-list {
   position: fixed;
   background-color: var(--white1);
   margin-top: 1rem;
+  position: absolute;
 }
 ul li {
   cursor: pointer;

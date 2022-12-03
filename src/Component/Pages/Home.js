@@ -162,7 +162,7 @@ function Home() {
               xs={12}
               className="average-text-section-box"
             >
-              <Grid container className="row average-text-section py-3 pl-3 ">
+              <Grid container className="row average-text-section  pl-3 " id="average-block">
                 <Grid item lg={3} md={3} sm={12} xs={12}>
                   <Box className="average-time">
                     <div className="text-average">Average block time</div>

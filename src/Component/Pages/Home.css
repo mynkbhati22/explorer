@@ -266,7 +266,7 @@
 
 @media screen and (min-width: 900px) {
   .animation-box {
-    animation: slideInLeft 5s ;
+    animation: slideInLeft 3s infinite ;
   }
   #average-block{
     padding: 4rem 0rem !important;
@@ -290,7 +290,7 @@
     height: 58.5rem;
   }
   .animation-box {
-    animation: slideInLeft-mobile 5s infinite;
+    animation: slideInLeft-mobile 3s infinite;
   }
 }
 

@@ -197,7 +197,7 @@
   }
 }
 .animation-box {
-  animation: 1s ease-out 0s 1 slideInLeft;
+  animation:  slideInLeft 5s  infinite;
 
 
 }

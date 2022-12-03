@@ -89,9 +89,7 @@ export default function TemporaryDrawer() {
                 )}
               </>
             </li>
-            <li>
-              <img src={polygonsvg} alt="" /> Polygon Edge Faucet{" "}
-            </li>
+           
             <li>
               <span
                 onClick={() => {

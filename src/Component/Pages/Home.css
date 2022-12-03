@@ -5,26 +5,32 @@
   background-color: var(--blue);
   color: var(--white);
 }
+
 .average-text-section {
   background-color: var(--violet);
   padding: 2rem 1rem;
   border-radius: 10px 10px 0px 0px;
 }
+
 .average-time {
   padding-left: 1rem;
   border-left: 4px solid var(--purple);
 }
+
 .time-explorer {
   font-size: 1.5rem;
   color: var(--white);
 }
+
 .text-average {
   font-size: 0.8rem;
 }
+
 .block-text-section {
   justify-content: space-between;
   display: flex;
 }
+
 .view-all-block {
   border: 1px solid var(--purple);
   padding: 0.7rem 1rem;
@@ -32,54 +38,66 @@
   color: var(--purple);
   font-size: 0.8rem;
 }
+
 .view-all-block:hover {
   background-color: var(--purple);
   color: var(--white1);
 }
+
 .Block-section-margin {
   margin: 3rem auto;
   padding: 2rem;
   box-shadow: 1px 0px 20px rgb(228, 227, 227);
   border-radius: 10px;
 }
+
 .block-text {
   font-size: 1.2rem;
   margin-bottom: 1rem;
 }
+
 .transaction-hash {
   font-size: 0.8rem;
   color: var(--darkgrey);
   overflow: hidden;
 }
+
 .transaction-box {
   margin: 1rem 0rem;
   border: 1px solid var(--grey);
   border-radius: 5px;
   border-left: 5px solid var(--skyblue);
 }
+
 .transaction-success-border {
   border: 1px solid var(--skyblue);
 }
+
 .transaction-hash-box {
   padding: 1.5rem 1rem;
 }
+
 .transaction-hash-time {
   padding: 1.5rem 0rem;
   padding-right: 1rem;
   padding-left: 1rem;
 }
-.css-1j30m50{
+
+.css-1j30m50 {
   padding-bottom: 10px !important;
 }
-.css-185gdzj-MuiCardHeader-root{
+
+.css-185gdzj-MuiCardHeader-root {
   display: none;
 }
+
 .transaction-success-border {
   position: relative;
   text-align: center;
   background-color: var(--lightblue);
   font-size: 0.8rem;
 }
+
 .transaction-success-text {
   position: absolute;
   top: 50%;
@@ -87,9 +105,11 @@
   transform: translate(-50%, -50%);
   color: var(--skyblue);
 }
+
 .transaction-word {
   font-weight: 600;
 }
+
 .transfer-text {
   font-weight: 600;
   background-color: var(--lightgrey);
@@ -98,46 +118,58 @@
   margin: 0.5rem;
   border-radius: 10px;
 }
+
 .transaction-hash-time {
   color: var(--darkgrey);
   font-size: 0.8rem;
 }
+
 .Block-section {
   background-color: var(--white3);
 }
+
 .Block-section-margin {
   background-color: var(--white1);
 }
+
 .hash-value {
   min-width: 30rem;
   overflow: hidden;
 }
+
 .average-text-section-box {
   position: relative;
 }
+
 .chart-image {
   width: 90%;
 }
+
 .gas-tracker {
   border-left: 5px solid #87e0a8;
   margin: 1rem 2rem;
 }
+
 .gas-tracker-box {
   display: flex;
 }
+
 .daily-transaction {
   border-left: 5px solid var(--skyblue);
   margin: 1rem 2rem;
 }
+
 .gas-tracker-text {
   margin-left: 1rem;
   display: inline-block;
 }
+
 .hash-box-num {
   font-size: 0.8rem;
   color: var(--darkgrey);
   background-color: var(--lightgrey);
 }
+
 .view-box {
   border: 1px solid var(--darkgrey);
   border-left: 5px solid var(--skyblue);
@@ -151,10 +183,12 @@
 .hash-box-num {
   padding: 1rem;
 }
+
 .hash-num,
 .block-num {
   color: var(--skyblue);
 }
+
 .view-box-container {
   padding-top: 2rem;
   width: 100%;
@@ -166,15 +200,18 @@
 .css-bhp9pd-MuiPaper-root-MuiCard-root {
   background-color: transparent !important;
 }
+
 .nothing {
   position: relative;
 }
+
 .nothing-show {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
+
 .apexcharts-text tspan {
   fill: white !important;
 }
@@ -182,51 +219,60 @@
 
 
 .animation-box {
-    -webkit-animation: fade-up-blocks-chain .3s cubic-bezier(.455,.03,.515,.955);
-    animation: fade-up-blocks-chain .3s cubic-bezier(.455,.03,.515,.955);
-    white-space: nowrap;
-    will-change: transform,opacity,width;
+  -webkit-animation: fade-up-blocks-chain .3s cubic-bezier(.455, .03, .515, .955);
+  animation: fade-up-blocks-chain .3s cubic-bezier(.455, .03, .515, .955);
+  white-space: nowrap;
+  will-change: transform, opacity, width;
 }
 
 @keyframes slideInLeft {
   0% {
     transform: translateX(0%);
   }
+
+  50% {
+    transform: translateX(0%);
+  }
+
+
   100% {
     transform: translateX(+100%);
   }
 }
+
 .animation-box {
-  animation:  slideInLeft 5s  infinite;
+  animation: slideInLeft 2s infinite;
 
 
 }
 
 
-.css-s18byi{
+.css-s18byi {
   background-color: transparent !important;
 }
 
-.Block-section-margin.block-section.Block.position-relative{
+.Block-section-margin.block-section.Block.position-relative {
   height: 40rem;
   overflow: auto;
   scrollbar-width: none;
-  scrollbar:none;
+  scrollbar: none;
 }
 
 /* ///media query//// */
 @media screen and (max-width:1400px) {
-  .view-box-container{
+  .view-box-container {
     height: 16.5rem;
   }
 }
+
 @media screen and (max-width:950px) {
-  .view-box-container{
+  .view-box-container {
     height: 17.5rem;
   }
 }
+
 @media screen and (max-width:900px) {
-  .view-box-container{
+  .view-box-container {
     height: 58.5rem;
   }
 }
@@ -244,22 +290,27 @@
     text-align: right;
     padding-left: 1rem;
   }
+
   .appex {
     padding: 2rem;
   }
+
   .average-text-section {
     height: 15rem;
   }
 }
+
 @media screen and (max-width: 900px) {
   .transaction-success-border {
     height: 5rem;
     background-color: var(--white1);
   }
+
   .average-time {
     margin: 1rem !important;
   }
 }
+
 @media screen and (min-width: 1200px) {
   .average-text-section {
     position: absolute;

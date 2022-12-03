@@ -55,7 +55,7 @@ function Home() {
   useEffect(() => {
     const interval = setInterval(() => {
       setCounter((counter) => (counter += 3));
-    }, 200000);
+    }, 20000);
 
     return () => {
       clearInterval(interval);

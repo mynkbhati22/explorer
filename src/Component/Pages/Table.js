@@ -5,6 +5,7 @@ import TableCell from "@mui/material/TableCell";
 import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
+import { ToastContainer, toast } from "react-toastify";
 import Paper from "@mui/material/Paper";
 import "./Table.css";
 import { Button } from "react-bootstrap";
@@ -29,6 +30,20 @@ export default function BasicTable() {
       console.log(error);
     }
   }, []);
+
+  // API FOR DELETEING BLOCKCARDS
+
+  const deleteBlockcards = (id) => {
+    try {
+      axios.delete(`${URL}/api/deleteblockcards/${id}`).then((res) => {
+        console.log(res);
+        toast.error("Deleted Successfully");
+        window.location.reload();
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   return (
     <>
@@ -61,20 +76,24 @@ export default function BasicTable() {
                       {res.mineraddress
                         ? res.mineraddress
                         : "0x0000000000000000000000000000"}
-                      ...
                     </TableCell>
                     <TableCell align="center">
                       {res.blocktranscations}
                     </TableCell>
                     <TableCell align="center">{res.Reward}</TableCell>
                     <TableCell align="center">
-                      <Link to={`/update/${res._id}`}>
+                      <Link to={`/update/${res._id}/${res.blocknummber}`}>
                         {" "}
                         <Button variant="info">Update</Button>
                       </Link>
                     </TableCell>
                     <TableCell align="center">
-                      <Button variant="danger">Delete</Button>
+                      <Button
+                        variant="danger"
+                        onClick={() => deleteBlockcards(res._id)}
+                      >
+                        Delete
+                      </Button>
                     </TableCell>
                   </TableRow>
                 ))
@@ -86,6 +105,17 @@ export default function BasicTable() {
             </TableBody>
           </Table>
         </TableContainer>
+        <ToastContainer
+          position="top-center"
+          autoClose={6000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+        />
       </div>
     </>
   );

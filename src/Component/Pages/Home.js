@@ -98,6 +98,14 @@ function Home() {
     ],
   };
 
+  // SLICE MINER ADDRESS
+
+  const sliceMinerAddress = (add) => {
+    const first = add.slice(0, 25);
+    const second = add.slice(37);
+    return first + second;
+  };
+
   return (
     <>
       <Navbar />
@@ -247,8 +255,10 @@ function Home() {
                               <span className="hash-num">
                                 {" "}
                                 {res.mineraddress
-                                  ? res.mineraddress
-                                  : "0x0000000000000000000000000000"}
+                                  ? sliceMinerAddress(res.mineraddress)
+                                  : sliceMinerAddress(
+                                      "0x000000000000000000000000000000000000"
+                                    )}
                                 ...
                               </span>{" "}
                               <br />

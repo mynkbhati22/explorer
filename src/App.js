@@ -13,7 +13,7 @@ function App() {
           {/*    <Home /> */}
           <Route exact path="/" element={<Home />} />
           <Route path="/admin" element={<Admin />} />
-          <Route path="/update/:id" element={<Update />} />
+          <Route path="/update/:id/:blocknummber" element={<Update />} />
           <Route
             path="/updatetranscationdetails/:id"
             element={<TranscationUpdate />}

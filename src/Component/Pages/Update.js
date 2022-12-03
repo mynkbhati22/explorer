@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Form, Button } from "react-bootstrap";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
@@ -7,6 +7,7 @@ import { ToastContainer, toast } from "react-toastify";
 import axios from "axios";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "react-toastify/dist/ReactToastify.css";
+import { useParams } from "react-router-dom";
 
 const URL = "https://maalblockchainapi.in.ngrok.io";
 
@@ -15,27 +16,29 @@ function Update() {
   const [mineraddress, setMinerAddress] = useState();
   const [blocktranscations, setBlockTranscations] = useState();
   const [Reward, setReward] = useState();
+  const [timeforseconds, setTimeforSeconds] = useState();
 
-  const addBlockCard = async (e) => {
+  const { id } = useParams();
+  console.log(id);
+
+  // UPDATING BLOCK
+
+  const updatingvblock = async (e) => {
     e.preventDefault();
     try {
-      const config = {
-        headers: {
-          "Content-type": "application/json",
-        },
-      };
-      const { data } = await axios.post(
-        `${URL}/api/blockcards`,
-        {
+      axios
+        .post(`${URL}/api/updatingblockcards/${id}`, {
           blocknummber: blocknummber,
           mineraddress: mineraddress,
+          timeforseconds: timeforseconds,
           blocktranscations: blocktranscations,
           Reward: Reward,
-        },
-        config
-      );
-      toast.success("Created Block Successfully");
-      console.log(data);
+        })
+
+        .then((res) => {
+          console.log(res);
+          toast.success("Updated Block Successfully!");
+        });
     } catch (error) {
       console.log(error);
     }
@@ -48,7 +51,7 @@ function Update() {
           <div>
             <h4 className="block-heading">BLOCK</h4>
           </div>
-          <Form onSubmit={addBlockCard}>
+          <Form onSubmit={updatingvblock}>
             <Form.Group className="mb-3" controlId="formBasicText">
               <Form.Label>Enter Block Number</Form.Label>
               <Form.Control
@@ -89,8 +92,18 @@ function Update() {
                 onChange={(e) => setReward(e.target.value)}
               />
             </Form.Group>
+            <Form.Group className="mb-3" controlId="formBasicText">
+              <Form.Label>Time</Form.Label>
+              <Form.Control
+                type="text"
+                required
+                placeholder="Time"
+                value={timeforseconds}
+                onChange={(e) => setTimeforSeconds(e.target.value)}
+              />
+            </Form.Group>
             <Button variant="primary" type="submit">
-              Create a Block
+              Updated Block
             </Button>
           </Form>
         </div>

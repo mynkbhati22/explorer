@@ -194,7 +194,12 @@
   background-color: transparent !important;
 }
 
-
+.Block-section-margin.block-section.Block.position-relative{
+  height: 40rem;
+  overflow: auto;
+  scrollbar-width: none;
+  scrollbar:none;
+}
 
 /* ///media query//// */
 @media screen and (max-width:1400px) {

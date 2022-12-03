@@ -80,7 +80,7 @@ function Navbar() {
                 {nav2 ? (
                   <ul className="transaction-list">
                     <li>All</li>
-                    <li>Ether</li>
+                    <li>MAAL</li>
                   </ul>
                 ) : (
                   ""
@@ -100,8 +100,7 @@ function Navbar() {
               <>
                 {nav3 ? (
                   <ul className="transaction-list">
-                    <li>Polygon Edge Doc</li>
-                    <li>Polygon Edge Repo</li>
+                    <li><a href="https://kesavi-web-solutions.gitbook.io/mal-blockchain-validator-system/" target="_blank">MAAL Ecosystem Doc</a></li>
                   </ul>
                 ) : (
                   ""

@@ -7,41 +7,38 @@ import { ToastContainer, toast } from "react-toastify";
 import axios from "axios";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "react-toastify/dist/ReactToastify.css";
+import { useParams } from "react-router-dom";
 
 const URL = "https://maalblockchainapi.in.ngrok.io";
 
 function TranscationUpdate() {
-  const [timeforseconds, setTimeforSeconds] = useState();
+  const [time, setTime] = useState();
+  const [transcationblocknummber, setTranscationBlockNumber] = useState();
   const [transcationsuccess, setTranscationsuccess] = useState();
   const [transfertranscation, setTransferTranscation] = useState();
   const [transcationfee, setTranscationFee] = useState();
   const [fromwalletaddress, setFomWalletAddress] = useState();
   const [towalletaddress, setToWalletAddress] = useState();
 
-  const addtranscations = (e) => {
+  const { id } = useParams();
+  console.log(id);
+
+  const updatetranscation = (e) => {
     e.preventDefault();
     try {
-      const config = {
-        headers: {
-          "Content-type": "application/json",
-        },
-      };
       axios
-        .post(
-          `${URL}/api/addingtranscation}`,
-          {
-            timeforseconds: timeforseconds,
-            transcationsuccess: transcationsuccess,
-            transfertranscation: transfertranscation,
-            transcationfee: transcationfee,
-            fromwalletaddress: fromwalletaddress,
-            towalletaddress: towalletaddress,
-          },
-          config
-        )
+        .post(`${URL}/api/updatingtranscations/${id}`, {
+          transcationsuccess: transcationsuccess,
+          transcationblocknummber: transcationblocknummber,
+          transfertranscation: transfertranscation,
+          transcationfee: transcationfee,
+          fromwalletaddress: fromwalletaddress,
+          towalletaddress: towalletaddress,
+          time: time,
+        })
         .then((res) => {
           console.log(res);
-          toast.success("Created Successfully!");
+          toast.success("Updated Successfully!");
         });
     } catch (error) {
       console.log(error);
@@ -55,7 +52,7 @@ function TranscationUpdate() {
           <div>
             <h4 className="block-heading">FOR TRANSCATION</h4>
           </div>
-          <Form onSubmit={addtranscations}>
+          <Form onSubmit={updatetranscation}>
             <Form.Group className="mb-3" controlId="formBasicText">
               <Form.Label>Transcation Status</Form.Label>
               <Form.Control
@@ -64,6 +61,16 @@ function TranscationUpdate() {
                 placeholder="Transfer Transaction"
                 value={transcationsuccess}
                 onChange={(e) => setTranscationsuccess(e.target.value)}
+              />
+            </Form.Group>
+            <Form.Group className="mb-3" controlId="formBasicText">
+              <Form.Label>Transcation Block Number</Form.Label>
+              <Form.Control
+                type="text"
+                required
+                placeholder="Transfer Transaction"
+                value={transcationblocknummber}
+                onChange={(e) => setTranscationBlockNumber(e.target.value)}
               />
             </Form.Group>
             <Form.Group className="mb-3" controlId="formBasicText">
@@ -112,12 +119,12 @@ function TranscationUpdate() {
                 type="text"
                 required
                 placeholder="Time"
-                value={timeforseconds}
-                onChange={(e) => setTimeforSeconds(e.target.value)}
+                value={time}
+                onChange={(e) => setTime(e.target.value)}
               />
             </Form.Group>
             <Button variant="primary" type="submit">
-              Create Transaction
+              Update Transaction
             </Button>
           </Form>
         </div>

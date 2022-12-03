@@ -21,14 +21,15 @@ export default function BasicTable() {
   console.log(id);
 
   useEffect(() => {
-    try {
+    const blockcardinterval = setInterval(() => {
       axios.get(`${URL}/api/getblockcards`).then((res) => {
         setBlockcards(res.data);
         console.log("gettingblockcards", res.data);
       });
-    } catch (error) {
-      console.log(error);
-    }
+    }, 1000);
+    return () => {
+      clearInterval(blockcardinterval);
+    };
   }, []);
 
   // API FOR DELETEING BLOCKCARDS

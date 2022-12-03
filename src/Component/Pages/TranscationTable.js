@@ -6,6 +6,7 @@ import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
+import { ToastContainer, toast } from "react-toastify";
 import "./Table.css";
 import { Button } from "react-bootstrap";
 import axios from "axios";
@@ -19,15 +20,28 @@ export default function TranscationTable() {
   console.log(id);
 
   useEffect(() => {
-    try {
+    const blockcardinterval = setInterval(() => {
       axios.get(`${URL}/api/gettranscationstatus`).then((res) => {
         setTranscationDetails(res.data);
-        console.log("gettingblockcards", res.data);
+        console.log("gettingtranscationdetails", res.data);
+      });
+    }, 5000);
+    return () => {
+      clearInterval(blockcardinterval);
+    };
+  }, []);
+
+  const deleteTranscation = (id) => {
+    try {
+      axios.delete(`${URL}/api/deletetranscation/${id}`).then((res) => {
+        console.log(res);
+        toast.error("Deleted Successfully");
+        window.location.reload();
       });
     } catch (error) {
       console.log(error);
     }
-  }, []);
+  };
 
   return (
     <div>
@@ -39,10 +53,11 @@ export default function TranscationTable() {
             <TableHead>
               <TableRow>
                 <TableCell align="center"> Transaction Status</TableCell>
-                <TableCell align="center">Transaction Transfer</TableCell>
+                <TableCell align="center">Transfer Tx hash</TableCell>
                 <TableCell align="center">Transaction Fee</TableCell>
                 <TableCell align="center">Transcation Transfer from</TableCell>
                 <TableCell align="center">Transcation Transfer to</TableCell>
+                <TableCell align="center">Time</TableCell>
                 <TableCell align="center">Update</TableCell>
                 <TableCell align="center">Delete</TableCell>
               </TableRow>
@@ -60,20 +75,30 @@ export default function TranscationTable() {
                     <TableCell align="center">
                       {res.transfertranscation}
                     </TableCell>
-                    <TableCell align="center">{res.transcationfee}</TableCell>
+                    <TableCell align="center">
+                      {" "}
+                      $ {res.transcationfee} MAAL TX Fee
+                    </TableCell>
                     <TableCell align="center">
                       {res.fromwalletaddress}
                     </TableCell>
                     <TableCell align="center">{res.towalletaddress}</TableCell>
-                    <TableCell align="center">{res.time}</TableCell>
+                    <TableCell align="center">{res.time} hours ago</TableCell>
                     <TableCell align="center">
-                      <Link to={`/updatetranscationdetails/${res._id}`}>
+                      <Link
+                        to={`/updatetranscationdetails/${res._id}/${res.transcationsuccess}`}
+                      >
                         {" "}
                         <Button variant="info">Update</Button>
                       </Link>
                     </TableCell>
                     <TableCell align="center">
-                      <Button variant="danger">Delete</Button>
+                      <Button
+                        variant="danger"
+                        onClick={() => deleteTranscation(res._id)}
+                      >
+                        Delete
+                      </Button>
                     </TableCell>
                   </TableRow>
                 ))
@@ -85,6 +110,18 @@ export default function TranscationTable() {
             </TableBody>
           </Table>
         </TableContainer>
+
+        <ToastContainer
+          position="top-center"
+          autoClose={6000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+        />
       </div>
     </div>
   );

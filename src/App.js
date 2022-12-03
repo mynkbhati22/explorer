@@ -15,7 +15,7 @@ function App() {
           <Route path="/admin" element={<Admin />} />
           <Route path="/update/:id/:blocknummber" element={<Update />} />
           <Route
-            path="/updatetranscationdetails/:id"
+            path="/updatetranscationdetails/:id/:transcationsuccess"
             element={<TranscationUpdate />}
           />
         </Routes>

@@ -6,6 +6,7 @@
   font-size: 1rem;
   color: var(--white);
   font-weight: 600;
+  margin-bottom: 0px;
 }
 .nav-list li,
 .nav-icon li {
@@ -13,6 +14,7 @@
   font-size: 1rem;
   color: var(--black);
   font-weight: 600;
+  margin-right: 2rem;
 }
 /* .navbar {
   background: rgba(212, 212, 212, 0.2);
